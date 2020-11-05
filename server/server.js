@@ -24,6 +24,9 @@ server.on('connection', (client) => {
     }
     /////////////////////////////////////////////////////////
   });
+  client.on('end', () => {
+    console.log(`client logged out`)
+  })
 
 });
 
