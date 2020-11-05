@@ -17,6 +17,8 @@ server.on('connection', (client) => {
       client.write(`I do have ${fileRequested} over here.`) 
       fs.readFile(fileRequested, "UTF-8", (err, text) => {
         if (err) throw err;
+
+        client.write(`The file you requested reads:\n`)
         client.write(text)
       })
     }
